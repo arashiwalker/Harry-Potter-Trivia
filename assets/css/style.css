@@ -1,0 +1,23 @@
+
+body {
+  	background-image: url("../images/background1.jpg");
+  	 text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#main {
+  width: 80%;
+  height: 95%;
+  box-sizing: border-box;
+  margin: 2.5% auto;
+  background-image: url("../images/answersheet.jpg");
+}
+
+#sub-main {
+  position: relative;
+}
+
