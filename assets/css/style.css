@@ -1,23 +1,143 @@
-
-body {
-  	background-image: url("../images/background1.jpg");
-  	 text-align: center;
+@font-face {
+  font-family:"Harry Potter";
+  src:url("../fonts/HARRP___.eot?") format("eot"),
+  url("../fonts/HARRP___.woff") format("woff"),
+  url("../fonts/HARRP___.ttf") format("truetype"),
+  url("../fonts/HARRP___.svg#HarryPotter") format("svg");
+  font-weight:normal;
+  font-style:normal;
 }
 
-html,
+@keyframes blinkingText{
+    0%{     color: orange;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color: orange;  }
+    100%{   color: orange;    }
+}
+
+html, body {
+	height: 100%;
+  font-family:"Harry Potter";
+}
+
 body {
+	background: url('../images/wallpaper.jpg');
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
+
+h2 {
+  font-family:"Harry Potter";
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+h3 {
+  font-family:"Harry Potter";
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+#title {
+	font-family:"Harry Potter";
+	font-size: 100px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
-#main {
-  width: 80%;
-  height: 95%;
-  box-sizing: border-box;
-  margin: 2.5% auto;
-  background-image: url("../images/answersheet.jpg");
+#startPage {
+	width: 770px;
+	height: 530px;
+	text-align: center;
 }
 
-#sub-main {
-  position: relative;
+.questionScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#questionsPage {
+	width: 770px;
+	height: 530px;
+	text-align: center;
+}
+
+#start {
+  margin-top: 20px;
+  line-height: 60px;
+  font-family:"Harry Potter";
+  font-size: 50px;
+  padding: 0 40px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  animation:blinkingText 1.5s infinite;
+}
+
+#start:hover {
+  font-size: 500%;
+}
+
+#button {
+  line-height: 60px;
+  font-family:"Harry Potter";
+  font-size: 27px;
+  padding: 0 70px;
+  border: none;
+  color: green;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 5px auto;
+}
+
+#button:hover {
+    font-size: 300%;
+    animation:blinkingText 1.5s infinite;
+}
+
+#reset {
+  line-height: 60px;
+  font-family:"Harry Potter";
+  font-size: 40px;
+  padding: 20 70px;
+  border: none;
+  color: pink;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 20px auto;
+}
+
+#reset:hover {
+   font-size: 400%;
+    animation:blinkingText 1.5s infinite;
+}
+
+#timer {
+  font-family:"Harry Potter";
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.grade {
+  font-family:"Harry Potter";
+  font-size: 30px;
+  margin-bottom: 5px;
 }
 

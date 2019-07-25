@@ -1,24 +1,26 @@
-w<!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harry Potter Trivia</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
-
-    <div id="main">
-     <h1>Harry Potter Trivia!</h1>
-      <div id="sub-main">
-        <div id="questions">
-          <button id="lets play!"> lets play! </button>
-        </div>
-      </div>
+    <div class="main">
+      <section id="startPage">
+        <h3 id="title">Harry Potter Trivia</h3>
+        <p id="start" type="submit" value="start" onclick="gameStart()">Start</p>
+      </section>
     </div>
-
-  
-
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-   </body>
+    <div class="questionScreen">
+      <section id="questionsPage">
+        <p id="timer"></p>
+        <p id="questions"></p>
+        <div id="choices">
+        </div>
+      </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+  </body>
 </html>
