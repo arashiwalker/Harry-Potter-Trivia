@@ -45,7 +45,7 @@ var newQ;
 var counter = 30;
 var correctAnswers = 0;
 var incorrectAnswers = 0;
-var thisQ = 0;
+var quizQ = 0;
 
 function playAudio(){
     var audio = new Audio('../TriviaGame/assets/sounds/luck.mp3')
@@ -61,13 +61,13 @@ function defaultPage(){
   $('.questionScreen').hide();
 }
 
-function gameStart(){
+function startQuiz(){
   $('.main').fadeOut(900, function() {
         $('main').empty();
         $('.questionScreen').show();
         $('.main').addClass('.questionScreen');
              $('#timer').text("Time Remaining: " + counter)
-             questionPage();
+             quizList();
              playAudio()
              playAudio2()
   })
@@ -81,13 +81,13 @@ function decreaseCounter(){
   }
 }
 
-function questionPage(){     
+function quizList(){     
        timer = setInterval(decreaseCounter, 1*1000);
        clearInterval(newQ);
-  $('#choices').html("<h2>" + questions[thisQ].question + "</h2>")
-  for (i=0; i<questions[thisQ].choices.length; i++) {
-              var button = $("<p id='button' value='" + questions[thisQ].choices[i] + "'>");
-    button.text(questions[thisQ].choices[i]);
+  $('#choices').html("<h2>" + questions[quizQ].question + "</h2>")
+  for (i=0; i<questions[quizQ].choices.length; i++) {
+              var button = $("<p id='button' value='" + questions[quizQ].choices[i] + "'>");
+    button.text(questions[quizQ].choices[i]);
     $('#choices').append(button);
   }
 }
@@ -96,10 +96,11 @@ function wellDone(){
        clearInterval(timer);
        correctAnswers++;
        $('#choices').html("<h2>Well Done Harry!</h2>");
-       if (thisQ === questions.length-1) {
-              newQ = setInterval(reportCard, 3*1000);
+       $('#choices').append("<img src='" + questions[quizQ].image + "'/>");
+       if (quizQ === questions.length-1) {
+              newQ = setInterval(reportCard, 4*1000);
        } else {
-              newQ = setInterval(newQuestion, 3*1000);
+              newQ = setInterval(newQuestion, 4*1000);
        }
 }
 
@@ -107,30 +108,32 @@ function payAttenion(){
        clearInterval(timer);
        incorrectAnswers++;
        $('#choices').html("<h2>Pay Attention!</h2>")
-       $('#choices').append("<h3>The correct answer was: " + questions[thisQ].answer + "</h3>")
-       if (thisQ === questions.length-1) {
-              newQ = setInterval(reportCard, 3*1000);
+       $('#choices').append("<h3>The correct answer was: " + questions[quizQ].answer + "</h3>")
+       $('#choices').append("<img src='" + questions[quizQ].image + "'/>");
+       if (quizQ === questions.length-1) {
+              newQ = setInterval(reportCard, 4*1000);
        } else {
-              newQ = setInterval(newQuestion, 3*1000);
+              newQ = setInterval(newQuestion, 4*1000);
        }
 }
 
 function napTime(){
        clearInterval(timer);
        $('#choices').html("<h2>No time for napping!</h2>");
-       $('#choices').append("<h3>The correct answer was: " + questions[thisQ].answer + "</h3>")
-       if (thisQ === questions.length-1) {
-              newQ = setInterval(reportCard, 3*1000);
+       $('#choices').append("<h3>The correct answer was: " + questions[quizQ].answer + "</h3>")
+       $('#choices').append("<img src='" + questions[quizQ].image + "'/>");
+       if (quizQ === questions.length-1) {
+              newQ = setInterval(reportCard, 4*1000);
        } else {
-              newQ = setInterval(newQuestion, 3*1000);
+              newQ = setInterval(newQuestion, 4*1000);
        }
 }
 
 function newQuestion(){
        counter = 30;
        $('#timer').text("Time Remaining: " + counter);       
-       thisQ++;
-       questionPage();
+       quizQ++;
+       quizList();
 }
 
 function reportCard(){
@@ -147,15 +150,15 @@ function reset(){
        counter = 30;
        correctAnswers = 0;
        incorrectAnswers = 0;
-       thisQ = 0;
+       quizQ = 0;
        $('#timer').text("Time Remaining: " + counter)
-       questionPage();
+       quizList();
        $("#timer").show();
 }
 
 defaultPage();
 $(document).on('click', '#button', function(event) {
-       if ($(event.target).attr("value") === questions[thisQ].answer) {
+       if ($(event.target).attr("value") === questions[quizQ].answer) {
               wellDone();
        } else {
               payAttenion();
