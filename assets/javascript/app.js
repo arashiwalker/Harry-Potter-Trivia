@@ -17,7 +17,7 @@ var questions = [{
   question: "What is Harry's patronous?",
   choices: ["Stag", "Owl", "Rabbit", "Unicorn"],
   answer: "Stag",
-  image: "assets/images/Stag.gif"
+  image: "assets/images/stag.gif"
 }, {
   question: "How did moaning Myrtle die?",
   choices: ["A mountain troll", "The Whomping Willow", "The Basilisk", "The Killing Curse"],
