@@ -105,7 +105,7 @@ After completing the homework please add the piece to your portfolio. Make sure 
 
 * Styling and theme are completely up to you. Get creative!
 
-* Remember to deploy your assignment to Github Pages.
+* Remember to deploy your assignment to Github Pages .
 
 *If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
 
